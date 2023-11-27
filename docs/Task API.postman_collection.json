@@ -1,0 +1,783 @@
+{
+	"info": {
+		"_postman_id": "bcdfaccf-91da-40e7-8b11-638d29539825",
+		"name": "Task API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4246890"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"varjang01@gmail.com\",\n    \"password\": \"Varjang@123\",\n    \"confirm_password\": \"Varjang@123\",\n    \"first_name\": \"Varjang\",\n    \"last_name\": \"Nandaniya\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"register",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"varjang05@gmail.com\",\n    \"password\": \"Varjang@123\",\n    \"confirm_password\": \"Varjang@123\",\n    \"first_name\": \"Varjang\",\n    \"last_name\": \"Nandaniya\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 17:36:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"email\": \"varjang05@gmail.com\",\n    \"is_verified\": false,\n    \"firstname\": \"Varjang\",\n    \"lastname\": \"Nandaniya\"\n}"
+				},
+				{
+					"name": "Duplicate email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"varjang05@gmail.com\",\n    \"password\": \"Varjang@123\",\n    \"confirm_password\": \"Varjang@123\",\n    \"first_name\": \"Varjang\",\n    \"last_name\": \"Nandaniya\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 17:37:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"user with this email already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"varjang01@gmail.com\",\n    \"password\": \"Varjang@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"varjang05@gmail.com\",\n    \"password\": \"Varjang@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 17:45:22 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDEwMjc5MjIsInN1YiI6InZhcmphbmcwNUBnbWFpbC5jb20ifQ.RAxRRNDcl6IaibIiILAWC4Aom-RfAWLPnDystj7G6FU\",\n    \"user\": {\n        \"id\": 2,\n        \"email\": \"varjang05@gmail.com\",\n        \"is_verified\": false,\n        \"firstname\": \"Varjang\",\n        \"lastname\": \"Nandaniya\"\n    }\n}"
+				},
+				{
+					"name": "invalid email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"varjang@gmail.com\",\n    \"password\": \"Varjang@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 17:45:56 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"invalid email address\"\n}"
+				},
+				{
+					"name": "invalid password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"varjang05@gmail.com\",\n    \"password\": \"varjang@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 17:48:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"invalid password\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDEwOTAzNzAsInN1YiI6InZhcmphbmcwMUBnbWFpbC5jb20ifQ.y_03ydd9yJnyod282hrJOss4JsfsBtJhb8gCgtczbVM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/profile/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get user profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/profile/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 17:53:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"email\": \"varjang04@gmail.com\",\n    \"is_verified\": false,\n    \"firstname\": \"Varjang\",\n    \"lastname\": \"Nandaniya\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDEwMjk2MDIsInN1YiI6InZhcmphbmcwMUBnbWFpbC5jb20ifQ.WOirrFnAcVeAJqv_1OeDBZQUSVurn2G755eEz5ACLCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"task_name\": \"task2\",\n    \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n    \"task_status\": \"todo1\",\n    \"deadline\": \"2023-11-26T18:09:53.67599Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/task/add/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"add",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task_name\": \"task2\",\n    \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n    \"task_status\": \"started\",\n    \"deadline\": \"2023-11-26T18:09:53.67599Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/task/add/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"add",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 18:59:25 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "432"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 14,\n    \"task_name\": \"task2\",\n    \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n    \"task_status\": \"started\",\n    \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n    \"user\": {\n        \"id\": 1,\n        \"email\": \"varjang01@gmail.com\",\n        \"is_verified\": false,\n        \"firstname\": \"Varjang\",\n        \"lastname\": \"Nandaniya\",\n        \"created_at\": \"2023-11-26T18:09:53.67599Z\",\n        \"modified_at\": \"2023-11-26T18:09:53.67599Z\"\n    },\n    \"created_at\": \"2023-11-26T18:59:25.787434Z\",\n    \"modified_at\": \"2023-11-26T18:59:25.787434Z\"\n}"
+				},
+				{
+					"name": "invalid task status",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task_name\": \"task2\",\n    \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n    \"task_status\": \"todo1\",\n    \"deadline\": \"2023-11-26T18:09:53.67599Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/task/add/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"add",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 19:52:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"invalid task status, it should be any of todo,in progress,done\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List user tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDEwOTAzMDQsInN1YiI6InZhcmphbmcwMUBnbWFpbC5jb20ifQ.1V0d7aagFatCtoXj8SHIzqC-dYCdfICt5lgWBR-hlYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/task/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"list",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List user tasks",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task_ids\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8,\n        9,\n        10,\n        11,\n        12,\n        13,\n        14,\n        15\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/task/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"list",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 Nov 2023 19:14:40 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 14,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:25.787434Z\",\n        \"modified_at\": \"2023-11-26T18:59:25.787434Z\"\n    },\n    {\n        \"id\": 13,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:24.340606Z\",\n        \"modified_at\": \"2023-11-26T18:59:24.340606Z\"\n    },\n    {\n        \"id\": 12,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:22.729141Z\",\n        \"modified_at\": \"2023-11-26T18:59:22.729141Z\"\n    },\n    {\n        \"id\": 11,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:22.013793Z\",\n        \"modified_at\": \"2023-11-26T18:59:22.013793Z\"\n    },\n    {\n        \"id\": 10,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:21.714209Z\",\n        \"modified_at\": \"2023-11-26T18:59:21.714209Z\"\n    },\n    {\n        \"id\": 9,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:21.382739Z\",\n        \"modified_at\": \"2023-11-26T18:59:21.382739Z\"\n    },\n    {\n        \"id\": 8,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:21.065492Z\",\n        \"modified_at\": \"2023-11-26T18:59:21.065492Z\"\n    },\n    {\n        \"id\": 7,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:20.717727Z\",\n        \"modified_at\": \"2023-11-26T18:59:20.717727Z\"\n    },\n    {\n        \"id\": 6,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:20.108231Z\",\n        \"modified_at\": \"2023-11-26T18:59:20.108231Z\"\n    },\n    {\n        \"id\": 5,\n        \"task_name\": \"task2\",\n        \"task_description\": \"longsafsfsdifbsdfbslbsdlsdbvdshjv\",\n        \"task_status\": \"started\",\n        \"deadline\": \"2023-11-26T18:09:53.67599Z\",\n        \"user\": null,\n        \"created_at\": \"2023-11-26T18:59:13.694024Z\",\n        \"modified_at\": \"2023-11-26T18:59:13.694024Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Task Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDEwMjk2MDIsInN1YiI6InZhcmphbmcwMUBnbWFpbC5jb20ifQ.WOirrFnAcVeAJqv_1OeDBZQUSVurn2G755eEz5ACLCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/task/detail/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"detail",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Task Completion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDEwOTAzMDQsInN1YiI6InZhcmphbmcwMUBnbWFpbC5jb20ifQ.1V0d7aagFatCtoXj8SHIzqC-dYCdfICt5lgWBR-hlYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"task_ids\": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/task/mark-done-bulk/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"mark-done-bulk",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDEwOTAzMDQsInN1YiI6InZhcmphbmcwMUBnbWFpbC5jb20ifQ.1V0d7aagFatCtoXj8SHIzqC-dYCdfICt5lgWBR-hlYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/task/1/remove/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"1",
+						"remove",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Remove task",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/task/1/remove/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"1",
+								"remove",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 27 Nov 2023 11:32:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
