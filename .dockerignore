@@ -1,0 +1,5 @@
+.env.template
+.git
+.gitignore
+docker-compose.yml
+Dockerfile

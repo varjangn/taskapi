@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  taskapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - API_PORT=${API_PORT}
+    container_name: taskapi
+    env_file:
+      - .env
+    ports:
+      - ${API_PORT}:${API_PORT}
+    depends_on:
+      - dbhost
+  dbhost:
+    image: postgres:11.22-alpine3.18
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${PGDB_DBNAME}
+      - POSTGRES_USER=${PGDB_USER}
+      - POSTGRES_PASSWORD=${PGDB_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - taskdb_data:/var/lib/postgresql/data/
+volumes:
+  taskdb_data:
